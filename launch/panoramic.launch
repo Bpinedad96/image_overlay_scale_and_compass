@@ -1,0 +1,6 @@
+ <!-- launch panoramic-->
+<launch>
+  <node name="getPanoramic" pkg="image_overlay_scale_and_compass" type="getPanoramic.py" output="screen"/>
+  <include file="$(find hugin_panorama)/launch/hugin_panorama.launch">
+  </include>
+</launch>

@@ -74,8 +74,11 @@ def overlay_image(fg_img, bg_img, x, y):
   for c in range(0,3):
       # pseudo code explaination: bg_img[where the overlay is going to be placed] = (overlay_image[all pixcels] * transparency) + (original_image * transparency)
       bg_img[y:y+fg_img.shape[0], x:x+fg_img.shape[1], c] = fg_img[:,:,c] * (fg_img[:,:,3]/255.0) + bg_img[y:y+fg_img.shape[0], x:x+fg_img.shape[1], c] * (1.0 - fg_img[:,:,3]/255.0)
+      getScale(fg_img.shape[0])
   return bg_img
 
+def getScale(y):
+  return y
 
 class ImageOverlay():
   def __init__(self):
