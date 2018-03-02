@@ -45,13 +45,13 @@ def main():
 	time.sleep(0.5)
 
 	#store initial image and load new button
-	os.system("rosservice call /hugin_panorama/image_saver/save")
+	#os.system("rosservice call /hugin_panorama/image_saver/save")
 	button=driver.find_element_by_xpath('//*[@id="ytSet2"]/div[1]/div[6]')
 
 	#take new 7 pictures
 	for i in range (0,7):
 		button.click()
-		time.sleep(1)
+		time.sleep(0.9)
 		actions.release(button).perform()
 		time.sleep(2.5)
 		os.system("rosservice call /hugin_panorama/image_saver/save")
